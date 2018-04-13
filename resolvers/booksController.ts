@@ -13,7 +13,7 @@ export function getAllBooks() {
  
 export async function addBook(root: any, {authorId, input}: any) {
     const authorObjectId = new mongoose.Types.ObjectId(authorId);
-    const author = await Author.findById(authorObjectId);
+    const author: any = await Author.findById(authorObjectId);
  
     if (!author) {
         throw new Error('Author is not exists');

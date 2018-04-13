@@ -15,11 +15,6 @@ export default new GraphQLObjectType({
             type: new GraphQLList(PersonType),
             description: 'List of all authors',
             resolve: getAllAuthors
-            // args: getGraphQLQueryArgs(PersonType),
-            // resolve: getMongoDbQueryResolver(PersonType,
-            //     async (filter:any, projection:any, options:any, obj:any, args:any, context: any) => {
-            //         return await context.db.collection('authors').find(filter, projection, options).toArray();
-            // })
         },
         author: {
             type: PersonType,

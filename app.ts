@@ -4,7 +4,7 @@ import express from 'express';
 import {MongoClient} from 'mongodb'
 // import dotenv from 'dotenv';
  
-import {init as initGraphQLSchema} from './schema';
+import {init as initGraphiQLSchema} from './schema';
  
 // dotenv.config();
  
@@ -21,7 +21,7 @@ MongoClient.connect(url, function(err, client) {
     const db = client.db(dbName);
 
 
-    app.use('/', initGraphQLSchema(db));
+    app.use('/', initGraphiQLSchema(db));
     
     app.listen(process.env.PORT || 4000);
 
